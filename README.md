@@ -18,7 +18,7 @@ Before deploying the solution, you need:
 
 To deploy:
 1.	From a terminal window, clone the GitHub repo:
-`git clone git@ssh.gitlab.aws.dev:dfxamzn/lambda-es-module-performance-benchmark.git`
+`git clone git@github.com:aws-samples/aws-lambda-es-module-performance-benchmark.git`
 2.	Change directory:
 `cd ./lambda-es-module-performance-benchmark`
 3.	Install dependencies:
