@@ -1,5 +1,5 @@
 {
-  "name": "lambda-es-module-performance-benchmark",
+  "name": "aws-lambda-es-module-performance-benchmark",
   "type": "module",
   "version": "1.0.0",
   "description": "Lambda ES Module performance benchmarking",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/dancfox/lambda-es-module-performance-benchmark.git"
+    "url": "https://github.com/aws-samples/aws-lambda-es-module-performance-benchmark"
   },
   "author": "Dan Fox, Amazon Web Services",
   "license": "MIT-0",

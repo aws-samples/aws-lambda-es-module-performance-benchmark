@@ -7,10 +7,6 @@ Globals:
   Function:
     Timeout: 5
     Tracing: Active
-    Environment:
-      Variables:
-        AWS_LAMBDA_EXEC_WRAPPER: /var/task/bootstrap
-        AWS_LAMBDA_RUNTIME_VERBOSE: 1
   Api:
     TracingEnabled: true
     
