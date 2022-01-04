@@ -1,0 +1,10 @@
+{
+  "name": "load_test",
+  "version": "1.0.0",
+  "description": "Perform load test of ES modules and CommonJS",
+  "author": "Dan Fox, Amazon Web Services",
+  "license": "MIT-0",
+  "devDependencies": {
+    "artillery": "^1.7.9"
+  }
+}

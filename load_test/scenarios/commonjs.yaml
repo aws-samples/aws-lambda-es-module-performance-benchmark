@@ -1,0 +1,5 @@
+scenarios:
+  - name: "requests for commonjs function"
+    flow:
+      - get:
+          url: "/commonjs"

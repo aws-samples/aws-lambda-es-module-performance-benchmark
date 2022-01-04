@@ -1,0 +1,18 @@
+{
+  "name": "lambda-es-module-performance-benchmark",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Lambda ES Module performance benchmarking",
+  "dependencies": {
+    "@aws-sdk/client-secrets-manager": "^3.36.1",
+    "@aws-sdk/client-ssm": "^3.36.1",
+    "aws-xray-sdk-core": "^3.3.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dancfox/lambda-es-module-performance-benchmark.git"
+  },
+  "author": "Dan Fox, Amazon Web Services",
+  "license": "MIT-0",
+  "homepage": "https://aws.amazon.com/blogs/compute/using-node-js-es-modules-and-top-level-await-in-aws-lambda"
+}

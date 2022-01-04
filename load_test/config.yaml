@@ -1,0 +1,6 @@
+config:
+  target: "Put API Gateway url string here"
+  phases:
+    - duration: 60
+      arrivalRate: 10
+      name: 60 second load test

@@ -1,0 +1,69 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  Lambda EC Module performance benchmark
+  
+Globals:
+  Function:
+    Timeout: 5
+    Tracing: Active
+    Environment:
+      Variables:
+        AWS_LAMBDA_EXEC_WRAPPER: /var/task/bootstrap
+        AWS_LAMBDA_RUNTIME_VERBOSE: 1
+  Api:
+    TracingEnabled: true
+    
+Resources:
+  CommonJSFunction:
+    Type: AWS::Serverless::Function 
+    Properties:
+      CodeUri: src/
+      Handler: commonjs.handler
+      Runtime: nodejs14.x
+      Policies:
+        - SSMParameterReadPolicy:
+            ParameterName: "configItem"
+        - AWSLambdaBasicExecutionRole
+      AutoPublishAlias: live
+      ProvisionedConcurrencyConfig:
+        ProvisionedConcurrentExecutions: 20
+      Events:
+        RestAPI:
+          Type: Api 
+          Properties:
+            Path: /commonjs
+            Method: get
+
+  ESModuleFunction:
+    Type: AWS::Serverless::Function 
+    Properties:
+      CodeUri: src/
+      Handler: esmodule.handler
+      Runtime: nodejs14.x
+      Policies:
+        - SSMParameterReadPolicy:
+            ParameterName: "configItem"
+        - AWSLambdaBasicExecutionRole
+      AutoPublishAlias: live
+      ProvisionedConcurrencyConfig:
+        ProvisionedConcurrentExecutions: 20
+      Events:
+        RestAPI:
+          Type: Api
+          Properties:
+            Path: /esmodule
+            Method: get
+
+  ConfigItemParameter:
+    Type: AWS::SSM::Parameter
+    Properties: 
+      Name: /configItem
+      Type: String
+      Value: "You have successfully retrieved a parameter from SSM!"
+
+Outputs:
+  EndpointURL:
+    Description: "API Gateway endpoint URL"
+    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/"
+
