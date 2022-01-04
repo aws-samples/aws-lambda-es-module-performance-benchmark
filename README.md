@@ -45,6 +45,7 @@ target: “Put API Gateway url string here”
 `./test_commonjs.sh`
 5.	Begin load test for ES module function. 
 `./test_esmodule.sh`
+6. Note the differences in the p99 latency to compare cold start performance.
 
 # Cleaning up
 To delete the sample application, use the latest version of the AWS SAM CLI and run:
