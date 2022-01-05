@@ -44,9 +44,11 @@ target: “Put API Gateway url string here”
 3.	Download and install dependencies:
 `npm install`
 4.	Begin load test for the CommonJS function. 
-`./test_commonjs.sh`
+- `./test_commonjs.sh`
+- `test_commonjs.sh` (Windows users)
 5.	Begin load test for ES module function. 
-`./test_esmodule.sh`
+- `./test_esmodule.sh`
+- `test_esmodule.sh` (Windows users)
 6. Note the differences in the p99 latency to compare cold start performance.
 
 # Cleaning up
