@@ -22,7 +22,9 @@ To deploy:
 2.	Change directory:
 `cd ./aws-lambda-es-module-performance-benchmark`
 3.	Install dependencies:
-`npm install --prefix ./src`
+`cd ./src`
+`npm install`
+`cd ..`
 4.	Build application:
 `sam build`
 5.	Deploy the application to your AWS account (deploying provisioned concurrency may take a few minutes to complete):
