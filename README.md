@@ -21,16 +21,12 @@ To deploy:
 `git clone https://github.com/aws-samples/aws-lambda-es-module-performance-benchmark`
 2.	Change directory:
 `cd ./aws-lambda-es-module-performance-benchmark`
-3.	Install dependencies:
-  - `cd ./src`
-  - `npm install`
-  - `cd ..`
-4.	Build application:
+3.	Build application:
 `sam build`
-5.	Deploy the application to your AWS account (deploying provisioned concurrency may take a few minutes to complete):
+4.	Deploy the application to your AWS account (deploying provisioned concurrency may take a few minutes to complete):
 `sam deploy –-guided`
 
-6.	Take note of the API Gateway URL in the Outputs section.
+5.	Take note of the API Gateway URL in the Outputs section.
 
 ![Outputs](./static/outputs.png)
  
