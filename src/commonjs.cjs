@@ -14,7 +14,6 @@ HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTIO
 OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
 SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. 
 */
-
 console.log("AWS_LAMBDA_INITIALIZATION_TYPE: " + process.env.AWS_LAMBDA_INITIALIZATION_TYPE); // provisioned concurrency or on-demand
 
 const { SSMClient, GetParameterCommand } = require("@aws-sdk/client-ssm"); // CommonJS import
@@ -22,17 +21,12 @@ const ssmClient = new SSMClient();
 const input = { "Name": "/configItem" };
 const command = new GetParameterCommand(input);
 const init_promise = ssmClient.send(command);
+let parameter = null;
 
 exports.handler = async () => {
-
-    // In commonjs, require is defined. In ES it is not.
-    if (typeof require == "function") {
-        console.log("I am a CommonJS module");
-    } else {
-        console.log("I am a ES module");
-    };
-
-    const parameter = await init_promise; // await inside handler
+    if (!parameter) {
+        parameter = await init_promise; // await inside handler
+    }
     console.log(parameter);
 
     const response = {
