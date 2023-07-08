@@ -5,6 +5,6 @@
   "author": "Dan Fox, Amazon Web Services",
   "license": "MIT-0",
   "devDependencies": {
-    "artillery": "^1.7.9"
+    "artillery": "^2.0.0-34"
   }
 }
